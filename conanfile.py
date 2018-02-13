@@ -33,7 +33,7 @@ class GTestConan(ConanFile):
         os.unlink(zip_name)
 
     def build(self):
-        cmake = CMake(self.settings)
+        cmake = CMake(self)
         if self.settings.os == "Windows":
             self.run("IF not exist _build mkdir _build")
         else:
